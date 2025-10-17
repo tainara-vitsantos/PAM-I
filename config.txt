@@ -9,4 +9,4 @@ npm install @react-navigation/bottom-tabs
 
 npx expo install @expo/vector-icons
 
-
+npm install @react-navigation/drawer

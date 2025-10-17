@@ -1,5 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import HomeScreen from './screens/HomeScreen'
@@ -8,45 +8,45 @@ import AboutScreen from './screens/AboutScreen'
 import ProdutoScreen from './screens/ProdutoScreen'
 
 
-const Tab = createBottomTabNavigator()
+const Drawer = createDrawerNavigator()
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Home">
-        <Tab.Screen name='Home'
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name='Home'
           component={HomeScreen}
           options={{
             title: 'Inicio',
-            tabBarIcon: ({ color, size }) => (
+            drawerIcon: ({ color, size }) => (
               <MaterialIcons name='home' color={color} size={size} />
             )
           }} />
-        <Tab.Screen name='Details' 
+        <Drawer.Screen name='Details' 
         component={DetailsScreen} 
         options={{
           title: 'Detalhes',
-          tabBarIcon: ({ color, size }) => (
+          drawerIcon: ({ color, size }) => (
             <MaterialIcons name='details' color={color} size={size} />
           )
         }} />
-        <Tab.Screen name='About' 
+        <Drawer.Screen name='About' 
         component={AboutScreen}
         options={{
           title: 'Sobre',
-          tabBarIcon: ({ color, size }) => (
+          drawerIcon: ({ color, size }) => (
             <MaterialIcons name='adb' color={color} size={size} />
           )
         }} />
-        <Tab.Screen name='Produto'
+        <Drawer.Screen name='Produto'
          component={ProdutoScreen}
          options={{
           title: 'Produto',
-          tabBarIcon: ({ color, size }) => (
+          drawerIcon: ({ color, size }) => (
             <MaterialIcons name='production-quantity-limits' color={color} size={size} />
           )
         }} /> 
-      </Tab.Navigator>
+      </Drawer.Navigator>
     </NavigationContainer>
   )
 }
